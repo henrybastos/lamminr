@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export default function Button({ variant, size, children, ...props }: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const style = cva({
-    base: "flex flex-row items-center justify-center rounded-sm transition-all cursor-pointer",
+    base: "flex flex-row items-center justify-center rounded-sm transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed",
     variants: {
       variant: {
         primary: "bg-neutral-950 text-neutral-50 border-solid border-neutral-950 hover:bg-neutral-800",
