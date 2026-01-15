@@ -3,12 +3,14 @@ import { Operation } from "./events.gateway";
 import BaseOperation from "./operations/base-operation";
 import NavigateOperation from "./operations/navigate.operation";
 import SetupOperation from "./operations/setup.operation";
+import WaitOperation from "./operations/wait.operation";
 
 @Injectable()
 export class OperationsService {
   private readonly operations: Record<string, BaseOperation> = {
     'base/setup': new SetupOperation(),
     'navigation/navigate': new NavigateOperation(),
+    'control/wait': new WaitOperation(),
   }
 
   async runOperation(operation: Operation) {

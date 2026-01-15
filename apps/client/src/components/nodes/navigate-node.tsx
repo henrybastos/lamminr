@@ -2,14 +2,14 @@ import { Handle, Node, NodeProps, Position } from '@xyflow/react';
 import { useCallback } from 'react';
 import Input from '../ui/input';
 
-type OperationNodeProps = Node<{
+type NavigateNodeProps = Node<{
   title: string;
   args: {
     url: string;
   }
 }>
 
-export const OperationNode = ({ data }: NodeProps<OperationNodeProps>) => {
+export const NavigateNode = ({ data }: NodeProps<NavigateNodeProps>) => {
   const onChange = useCallback((evt: any) => {
     data.args.url = evt.target.value;
   }, []);
@@ -24,7 +24,7 @@ export const OperationNode = ({ data }: NodeProps<OperationNodeProps>) => {
 
       {/* <input type="text" onChange={onChange} className="nodrag border border-neutral-300 rounded-xs"/> */}
       
-      <Input onChange={onChange} />
+      <Input onChange={onChange} placeholder="https://example.com" />
       <Handle type="target" position={Position.Top} />
       <Handle type="source" position={Position.Bottom} />
     </div>

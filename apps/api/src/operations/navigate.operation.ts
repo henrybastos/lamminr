@@ -17,7 +17,6 @@ class NavigateOperation extends BaseOperation {
 
     console.log('[NavigateOperation::action] Navigating to URL:', props.args.url);
     await Operator.page.goto(props.args.url);
-    console.log('[NavigateOperation::action] Props', props);
     return { next: props.connections?.[0]?.target };
   }
 }
